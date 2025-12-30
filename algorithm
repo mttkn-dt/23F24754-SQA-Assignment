@@ -1,0 +1,29 @@
+START
+
+INITIALIZE mostSales = 0
+INITIALIZE bestSeller = "None"
+INITIALIZE index = 0
+CREATE empty dictionary salesCount
+
+GET salesTransactions
+
+WHILE (index < length of salesTransactions) DO
+    currentProduct = salesTransactions[index].productID
+    IF (currentProduct exists in salesCount) THEN
+        salesCount[currentProduct] = salesCount[currentProduct] + 1
+    ELSE
+        salesCount[currentProduct] = 1
+    END IF
+    INCREMENT index
+END WHILE
+
+FOR each product in salesCount DO
+    IF (salesCount[product] > mostSales) THEN
+        mostSales = salesCount[product]
+        bestSeller = product
+    END IF
+END FOR
+
+PRINT "Best Seller is " + bestSeller
+
+END
