@@ -7,6 +7,14 @@ CREATE empty dictionary salesCount
 
 GET salesTransactions
 
+// Issue Fix Start
+IF (length of salesTransactions == 0) THEN // Checking to see if salesTransaction is Empty
+    PRINT "No sales data available" // If Empty Print Text saying No Sales Data Available then Ending Program
+    END
+END IF
+
+// Issue Fix End
+
 WHILE (index < length of salesTransactions) DO
     currentProduct = salesTransactions[index].productID
     IF (currentProduct exists in salesCount) THEN
