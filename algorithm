@@ -10,9 +10,9 @@ GET salesTransactions
 WHILE (index < length of salesTransactions) DO
     currentProduct = salesTransactions[index].productID
     IF (currentProduct exists in salesCount) THEN
-        salesCount[currentProduct] = salesCount[currentProduct] + 1
+        salesCount[currentProduct] = salesCount[currentProduct] + 2   // Modified by how much sales count will increase from 1 to 2
     ELSE
-        salesCount[currentProduct] = 1
+        salesCount[currentProduct] = 2 // When a new product sales count is made modified how much it is intialized with from 1 to 2
     END IF
     INCREMENT index
 END WHILE
