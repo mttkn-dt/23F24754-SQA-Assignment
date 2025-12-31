@@ -18,7 +18,7 @@ WHILE (index < length of salesTransactions) DO
 END WHILE
 
 FOR each product in salesCount DO
-    IF (salesCount[product] > mostSales) THEN
+    IF (salesCount[product] >= mostSales) THEN   // Modified so that if a product that matches the amount of sales of the current best seller will become the new best seller instead of having to be greater than current
         mostSales = salesCount[product]
         bestSeller = product
     END IF
